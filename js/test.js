@@ -1,21 +1,21 @@
-$("#").on("click", function (e) {
+$("#task-button").on("click", function (e) {
     const APIKEY = "60190dbd6adfba69db8b6c8d";
     // prevent default action of the button
     e.preventDefault();
 
     // retrieve form values
-    let = $("#").val();
+    let taskContent= $("#task-content").val();
 
     // get form values when user clicks
     let jsondata = {
-        "": ,
-    }
+        "task": taskContent
+    };
 
     // creating AJAX settings
     let settings = {
         "async": true,
         "crossDomain": true,
-        "url": "",
+        "url": "https://tuhveezt-1b53.restdb.io/rest/tasks",
         "method": "POST", 
         "headers": {
           "content-type": "application/json",
@@ -25,17 +25,17 @@ $("#").on("click", function (e) {
         "processData": false,
         "data": JSON.stringify(jsondata),
         "beforeSend": function(){
-          $("").prop( "disabled", true);
-          $("").trigger("reset");
+          $("#add-task-form").trigger("reset");
         }
     }
 
     // sends request to DB
     $.ajax(settings).done(function (response) {
         console.log(response);
-        
-        $("#").prop( "disabled", false);
-        
+
+        $("#add-update-msg").show().fadeOut(4000);
+
+        getTasks();
         
     });
 
@@ -44,7 +44,7 @@ $("#").on("click", function (e) {
         let settings = {
             "async": true,
             "crossDomain": true,
-            "url": "",
+            "url": "https://tuhveezt-1b53.restdb.io/rest/tasks",
             "method": "GET",
             "headers": {
               "content-type": "application/json",
@@ -57,34 +57,18 @@ $("#").on("click", function (e) {
       
             let content = "";
       
-            for (var i = 0; i < response.length && i < limit; i++) {
-              //console.log(response[i]);
-              //[METHOD 1]
-              //let's run our loop and slowly append content
-              //we can use the normal string append += method
-              /*
-              content += "<tr><td>" + response[i].name + "</td>" +
-                "<td>" + response[i].email + "</td>" +
-                "<td>" + response[i].message + "</td>
-                "<td>Del</td><td>Update</td</tr>";
-              */
+            for (var i = 0; i < response.length; i++) {
 
-              content = `${content}<tr id='${response[i]._id}'><td>${response[i].name}</td>
-              <td>${response[i].studentid}</td>
-              <td>${response[i].mentor}</td>
-              <td>${response[i].studentclass}</td>
-              <td>${response[i].email}</td>
-              <td>${response[i].message}</td>
+              content = `${content}<tr id='${response[i]._id}'>
+              <td>${response[i].task}</td>
               <td><a href='#' class='delete' data-id='${response[i]._id}'>Del</a></td>
-              <td><a href='#update-contact-container' class='update' data-id='${response[i]._id}' data-msg='${response[i].message}' data-name='${response[i].name}' data-studentid= '${response[i].studentid}' data-mentor= '${response[i].mentor}' data-studentclass= '${response[i].studentclass}' data-email='${response[i].email}'>Update</a></td></tr>`;
+              <td><a href='#update-contact-container' class='update' data-task='${response[i].task}'>Update</a></td></tr>`;
       
             }
+
+            $("#task-result tbody").html(content);
       
-            //[STEP 9]: Update our HTML content
-            //let's dump the content into our table body
-            $("#contact-list tbody").html(content);
-      
-            $("#total-contacts").html(response.length);
+            // $("#total-contacts").html(response.length);
           });
       
       

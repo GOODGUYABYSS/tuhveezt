@@ -13,59 +13,84 @@
 </head>
 
 <body>
-    <section class="screen-height">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-lg-3">
-            <div class="container-fluid">
-            <a class="navbar-brand" href="#">Gandhi</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark py-lg-3">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">Gandhi</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
 
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
-                </ul>
-            </div>
-            </div>
-        </nav>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
 
-        <header class="snap-point" id="home-page">
+    <section class="screen-height snap-point">
+        <header id="home-page">
             <h2>Your Time Matters:</h2>
             <h1>Tuhveezt</h1>
 
             <div id="get-started-container">
-                <button type="button" class="btn btn-primary" id="get-started">Get Started</button>
+                <button type="button" class="btn btn-outline-primary btn-lg" id="get-started">Get Started</button>
             </div>
         </header>
       </section>
 
-    <header>
+      <section class="screen-height snap-point" id="about">
+        <h1>Why Tuhveet?</h1>
 
-    </header>
+        <article>
+            <p>
+                Tuhveezt is a to-do list with a time tracker that helps users like you to organise things in your 
+                life so that you will not feel that you are always running out of time or chasing for the deadlines all the time.
+            </p>
+            
+            <p>
+                With Tuhveezt, you will find yourself having more time to work around with, and find yourself completing tasks more 
+                efficiently and effectively.
+            </p>
+        </article>
+    </section>
 
+    <footer class="container-fluid snap-point">
+        <section class="row">
+            <div class="col" id="quote">
+                <img src="../images/tuhveezt_logo.png" alt="logo" id="logo">
+                <p>Keep track of the present to prepare for your future.</p>
+            </div>
 
-    <footer>
-        
+            <div id="socials" class="col">
+                <div class="col-lg social padding" id="socials">
+                    <a href="http://www.facebook.com/tuhveezt" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="https://twitter.com/tuhveezt" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+                    <a href="https://www.instagram.com/tuhveezt/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                    <a href="https://www.youtube.com/tuhveezt/" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+                </div>
+            </div>
+        </section>
     </footer>
 
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    <script src="test.js"></script>
+    <script src="../js/test.js"></script>
 </body>
 
 </html>
