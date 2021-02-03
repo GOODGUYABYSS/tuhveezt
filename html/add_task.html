@@ -11,7 +11,7 @@
     <link href="../css/style.css" rel="stylesheet" type="text/css">
 </head>
 
-<body onload="getTasks()">
+<body onload="getTasks()" onunload="editTasks()">
     <!-- <form id="add-task-form" action="">
         <label for="task"></label>
         <input type="text" id="task-content" name="task" class="task"><br><br>
@@ -24,6 +24,12 @@
     </div>
 
     <table id='task-result'>
+        <colgroup>
+            <col span="1" style="width: 80%;">
+            <col span="1" style="width: 10%;">
+            <col span="1" style="width: 10%;">
+        </colgroup>
+
         <tbody>
 
         </tbody>
@@ -31,11 +37,11 @@
 
     <section id="inputs">
         <div class="input-group" id="button-group">
-            <input type="text" class="form-control task" id="task-content" placeholder="Add Task" aria-label="Recipient's username with two button addons">
-            <button class="btn btn-outline-secondary" id="task-button" type="button">Add Task</button>
+            <input type="text" class="form-control bg-dark text-white button-design task" id="task-content" placeholder="Add Task" aria-label="Recipient's username with two button addons">
+            <button class="btn btn-outline-secondary button-design" id="task-button" type="button">Add Task</button>
         </div>
 
-        <button type="button" class="btn btn-outline-secondary" id="add-task">+</button>
+        <button type="button" class="btn btn-outline-dark button-design" id="add-task">+</button>
     </section>
 
     <footer class="container-fluid">

@@ -1,5 +1,6 @@
 const APIKEY = "60190dbd6adfba69db8b6c8d";
 var editmode = false
+
 $("#task-button").on("click", function (e) {
     // prevent default action of the button
     e.preventDefault();
@@ -80,9 +81,10 @@ $("#task-result").on("click", ".update", function (e) {
         });
     });
     editmode = true;
-  }
+}
 
-  var temp = $(this).data("id")
+  var jsondata = {"task": "bbbbbbbbbbbbbbbbbbb"};
+  var temp = $("#task-result").data("id")
   var settings = {
     "async": true,
     "crossDomain": true,
@@ -90,7 +92,7 @@ $("#task-result").on("click", ".update", function (e) {
     "method": "PUT",
     "headers": {
       "content-type": "application/json",
-      "x-apikey": "<your CORS apikey here>",
+      "x-apikey": APIKEY,
       "cache-control": "no-cache"
     },
     "processData": false,
@@ -99,8 +101,6 @@ $("#task-result").on("click", ".update", function (e) {
 
   $.ajax(settings).done(function (response) {
     console.log(response);
-
-    getTasks();
   });
 
 })
@@ -126,9 +126,10 @@ function getTasks(all = true) {
     for (var i = 0; i < response.length; i++) {
 
       content = `${content}<tr id='${response[i]._id}'>
-      <td class="item"><span class="task-span">${response[i].task}</span></td>
-      <td><button id='task-delete' class='delete' data-id='${response[i]._id}'>Delete</button></td>
-      <td><button id='task-update' class='update' data-task='${response[i].task}'>Edit Task</button></td></tr>`;
+      <td class="item"><span id="task-span" class="task-span">${response[i].task}</span></td>
+      <td class="underline"><button type="button" id='task-delete' class='delete option button-design btn btn-danger btn-sm table-button' data-id='${response[i]._id}'>Delete</button></td>
+      <td class="underline"><button type="button" id='task-update' class='update option button-design btn btn-info btn-sm table-button' data-task='${response[i].task}'>Edit</button></td>
+      </tr>`;
 
     }
 
