@@ -11,20 +11,17 @@
     <link href="../css/style.css" rel="stylesheet" type="text/css">
 </head>
 
-<body>
-    <!-- <label class="item-container">
-        <input type="checkbox" checked="checked">
-        <span class="checkmark"></span>
-    </label>
-
-    <textarea id="task-content" rows="4" cols="50" name="comment" form="usrform">Enter text here...</textarea>
-    <button type="button" id="task-button" class="enter-task"></button> -->
-
-    <form id="add-task-form" action="">
+<body onload="getTasks()">
+    <!-- <form id="add-task-form" action="">
         <label for="task"></label>
         <input type="text" id="task-content" name="task" class="task"><br><br>
         <button id="task-button">Done</button>
-    </form> 
+        <button id="add-task">Add Task</button>
+    </form> -->
+
+    <div id="title">
+        <h4>Tasks</h4>
+    </div>
 
     <table id='task-result'>
         <tbody>
@@ -32,7 +29,16 @@
         </tbody>
     </table>
 
-    <footer class="container-fluid snap-point">
+    <section id="inputs">
+        <div class="input-group" id="button-group">
+            <input type="text" class="form-control task" id="task-content" placeholder="Add Task" aria-label="Recipient's username with two button addons">
+            <button class="btn btn-outline-secondary" id="task-button" type="button">Add Task</button>
+        </div>
+
+        <button type="button" class="btn btn-outline-secondary" id="add-task">+</button>
+    </section>
+
+    <footer class="container-fluid">
         <section class="row">
             <div class="col" id="quote">
                 <img src="../images/tuhveezt_logo.png" alt="logo" id="logo">
@@ -54,8 +60,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script src="../js/test.js"></script>
+    <script src="../js/script_front.js"></script>
 </body>
-
-
-
 </html>

@@ -1,5 +1,11 @@
 html {
   scroll-snap-type: y proximity;
+
+  background-color: black;
+}
+
+body {
+  background-color: black;
 }
 
 section.screen-height {
@@ -14,15 +20,38 @@ section.screen-height {
     background-size: cover;
 }
 
-h1, h2 {
+h1 {
     font-size: 65px;
     font-weight: 300;
 
     color: #00FFFF;
 }
 
-table {
-  border: 1px solid black;
+h4 {
+  color: cyan;
+
+  text-align: left;
+}
+
+table, th, td {
+  /* border: 1px solid white; */
+  width: 60%;
+
+  border-collapse: collapse;
+  background-color: black;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  /* padding: 5px; */
+
+  text-align: left;
+  
+  /* padding-left: 20%; */
+}
+
+td {
+  padding-left: 10px;
 }
 
 p {
@@ -94,6 +123,14 @@ footer {
   margin-top: -3%;
 }
 
+.item {
+  color: cyan;
+}
+
+.delete {
+  text-align: right;
+}
+
 #home-page {
     text-align: center;
     position: absolute;
@@ -144,6 +181,48 @@ footer {
   float: left;
   /* padding-left: 3%; */
   padding-bottom: 7%;
+}
+
+#button-group {
+  width: 60%;
+  margin: auto;
+
+  visibility: hidden;
+}
+
+#inputs {
+  position: relative;
+  margin-top: 1%;
+}
+
+#add-task {
+  position: absolute;
+
+  width: 60%;
+  
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 0.7%;
+
+  border: 2px solid cyan;
+  
+  font-size: 30px;
+  color: cyan;
+  line-height: 0px;
+
+}
+
+#title {
+  width: 60%;
+  margin: auto;
+
+  margin-top: 2.5%;
+  margin-bottom: 2%;
 }
 
 
