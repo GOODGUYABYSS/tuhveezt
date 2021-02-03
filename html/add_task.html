@@ -11,37 +11,47 @@
     <link href="../css/style.css" rel="stylesheet" type="text/css">
 </head>
 
-<body onload="getTasks()" onunload="editTasks()">
-    <!-- <form id="add-task-form" action="">
-        <label for="task"></label>
-        <input type="text" id="task-content" name="task" class="task"><br><br>
-        <button id="task-button">Done</button>
-        <button id="add-task">Add Task</button>
-    </form> -->
-
-    <div id="title">
-        <h4>Tasks</h4>
+<body onload="getTasks()">
+    <div id="id-side-nav" class="class-side-nav">
+        <a href="javascript:void(0)" class="closebtn" id="close-menu">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
     </div>
 
-    <table id='task-result'>
-        <colgroup>
-            <col span="1" style="width: 80%;">
-            <col span="1" style="width: 10%;">
-            <col span="1" style="width: 10%;">
-        </colgroup>
+    <span id="open-menu">&#9776;</span>
 
-        <tbody>
-
-        </tbody>
-    </table>
-
-    <section id="inputs">
-        <div class="input-group" id="button-group">
-            <input type="text" class="form-control bg-dark text-white button-design task" id="task-content" placeholder="Add Task" aria-label="Recipient's username with two button addons">
-            <button class="btn btn-outline-secondary button-design" id="task-button" type="button">Add Task</button>
+    <div id="main">
+    <section id="screen-height">
+        <div id="title">
+            <h4>Tasks</h4>
         </div>
 
-        <button type="button" class="btn btn-outline-dark button-design" id="add-task">+</button>
+        <table id='task-result'>
+            <colgroup>
+                <col span="1" style="width: 80%;">
+                <col span="1" style="width: 10%;">
+                <col span="1" style="width: 10%;">
+            </colgroup>
+
+            <tbody>
+
+            </tbody>
+        </table>
+
+        <!-- For B1B -->
+        <input type="text" id="thingy-1" class="thingy-1">
+
+
+        <section id="inputs">
+            <div class="input-group" id="button-group">
+                <input type="text" class="form-control bg-dark text-white button-design task" id="task-content" placeholder="Add Task" aria-label="Recipient's username with two button addons">
+                <button class="btn btn-outline-secondary button-design" id="task-button" type="button">Add Task</button>
+            </div>
+
+            <button type="button" class="btn btn-outline-dark button-design" id="add-task">+</button>
+        </section>
     </section>
 
     <footer class="container-fluid">
@@ -61,6 +71,7 @@
             </div>
         </section>
     </footer>
+    </div>
 
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>

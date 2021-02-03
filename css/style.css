@@ -69,6 +69,10 @@ footer {
   background-color: black;
 }
 
+span {
+  cursor: pointer;
+}
+
 #socials {
   padding-bottom: 2%; 
   padding-top: 2%;
@@ -154,6 +158,51 @@ footer {
 
 .option {
   border: 0;
+}
+
+/* The following is code for the styling of the sidebar */
+.class-side-nav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.class-side-nav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.class-side-nav a:hover {
+  color: #f1f1f1;
+}
+
+.class-side-nav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  /* padding-right: 200px; */
+}
+
+@media screen and (max-height: 450px) {
+  .class-side-nav {padding-top: 15px;}
+  .class-side-nav a {font-size: 18px;}
 }
 
 td > .task-span {

@@ -1,5 +1,4 @@
 const APIKEY = "60190dbd6adfba69db8b6c8d";
-var editmode = false
 
 $("#task-button").on("click", function (e) {
     // prevent default action of the button
@@ -64,27 +63,11 @@ $("#task-result").on("click", ".delete", function (e) {
 
 
 $("#task-result").on("click", ".update", function (e) {
+  var str = $('#thingy-1').val()
+  $('#thingy-1').val("");
   e.preventDefault();
-  if (editmode) {
-    $('.task-span').replaceWith(function () {
-        return $("<span>", {
-            "class": this.className,
-            text: this.value
-        });
-    });
-    editmode = false;
-} else {
-    $('.task-span').replaceWith(function () {
-        return $("<input>", {
-            value: this.innerText,
-                "class": this.className
-        });
-    });
-    editmode = true;
-}
-
-  var jsondata = {"task": "bbbbbbbbbbbbbbbbbbb"};
-  var temp = $("#task-result").data("id")
+  var jsondata = {"task": str};
+  var temp = $(this).data("id")
   var settings = {
     "async": true,
     "crossDomain": true,
@@ -101,6 +84,7 @@ $("#task-result").on("click", ".update", function (e) {
 
   $.ajax(settings).done(function (response) {
     console.log(response);
+    getTasks();
   });
 
 })
@@ -128,7 +112,7 @@ function getTasks(all = true) {
       content = `${content}<tr id='${response[i]._id}'>
       <td class="item"><span id="task-span" class="task-span">${response[i].task}</span></td>
       <td class="underline"><button type="button" id='task-delete' class='delete option button-design btn btn-danger btn-sm table-button' data-id='${response[i]._id}'>Delete</button></td>
-      <td class="underline"><button type="button" id='task-update' class='update option button-design btn btn-info btn-sm table-button' data-task='${response[i].task}'>Edit</button></td>
+      <td class="underline"><button type="button" id='task-update' class='update option button-design btn btn-info btn-sm table-button' data-id='${response[i]._id}'>Edit</button></td>
       </tr>`;
 
     }

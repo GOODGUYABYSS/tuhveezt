@@ -37,4 +37,5 @@ https://weixiangbeak.github.io/tuhveezt/
 
 References:
 Vertical Align To Center - https://medium.com/front-end-weekly/absolute-centering-in-css-ea3a9d0ad72e
-https://use.fontawesome.com/releases/v5.0.8/js/all.js
+Logos - https://use.fontawesome.com/releases/v5.0.8/js/all.js
+Side Navigation Bar - https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav
