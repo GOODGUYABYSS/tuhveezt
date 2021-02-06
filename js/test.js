@@ -1,4 +1,6 @@
 const APIKEY = "60190dbd6adfba69db8b6c8d";
+var level = $('#xp')
+
 
 $("#task-button").on("click", function (e) {
     // prevent default action of the button
@@ -96,6 +98,11 @@ $("#task-result").on("click", ".checkmark", function (e) {
   // retrieve form values
   var newval = $(this).data("task")
   let taskContent= newval
+  window.xp += 20
+  if (window.xp === 100) {
+    window.level += 1
+    window.xp = 0
+  }
 
   // get form values when user clicks
   let jsondata = {
@@ -139,6 +146,9 @@ $("#task-result").on("click", ".checkmark", function (e) {
     console.log(response);
     getTasks();
     getCompletedtasks();
+    update_level_bar();
+    console.log(window.level);
+    console.log(window.xp);
   });
 
 })
@@ -208,7 +218,7 @@ function getTasks(all = true) {
 
 function getCompletedtasks(all = true) {
   // creating ajax settings
-  let settings2 = {
+  let settings = {
     "async": true,
     "crossDomain": true,
     "url": "https://tuhveezt-1b53.restdb.io/rest/tasks-completed",
@@ -220,7 +230,7 @@ function getCompletedtasks(all = true) {
     },
   }
 
-  $.ajax(settings2).done(function (response) {
+  $.ajax(settings).done(function (response) {
     let content = "";
 
     for (var i = 0; i < response.length; i++) {
@@ -236,4 +246,50 @@ function getCompletedtasks(all = true) {
     $("#completed-tasks tbody").html(content);
     console.log('done');
     });
+}
+
+
+function update_level_bar() {
+  var jsondata = {"level": level, "xp": xp};
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://tuhveezt-1b53.restdb.io/rest/level/601e3c8449de2258000143fe",
+    "method": "PUT",
+    "headers": {
+      "content-type": "application/json",
+      "x-apikey": APIKEY,
+      "cache-control": "no-cache"
+    },
+    "processData": false,
+    "data": JSON.stringify(jsondata)
+  }
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
+}
+
+function get_level_bar() {
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://tuhveezt-1b53.restdb.io/rest/level",
+    "method": "GET",
+    "headers": {
+      "content-type": "application/json",
+      "x-apikey": APIKEY,
+      "cache-control": "no-cache"
+    }
+  }
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+    $('#percent').text( `${response[0].xp}%`)
+    $('#xp').text( `XP: ${response[0].xp}/100`)
+    $('#level').text( `Level: ${response[0].level}`)
+    window.lelevel = response[0].level;
+    var xp = response[0].xp;
+
+  });
 }
