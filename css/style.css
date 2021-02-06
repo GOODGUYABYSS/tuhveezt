@@ -1,7 +1,5 @@
 html {
-  scroll-snap-type: y proximity;
-
-  background-color: black;
+  scroll-snap-type: y proximity; /* Sets up the area where scroll snapping takes effect */
 }
 
 body {
@@ -9,15 +7,16 @@ body {
 }
 
 section.screen-height {
-    height: 100vh;
-    position: relative;
+  /* Makes sure the background image is centered and fills up the whole screen */
+  height: 100vh;
+  position: relative;
 
-    background-image: url("../images/home_page_background_image.png");
-    background-color: "#cccccc";
+  background-image: url("../images/home_page_background_image.png");
+  background-color: "#cccccc";
 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h1 {
@@ -53,12 +52,7 @@ td {
   padding: 10px;
   border-top: 1px solid rgb(70, 70, 70);
   border-bottom: 1px solid rgb(70, 70, 70);
-  word-wrap: break-word;
-}
-
-tr {
-  border-top: cyan;
-  border-bottom: red;
+  word-wrap: break-word; /* Allows long entries to wrap within the table box instead of having one long line */
 }
 
 p {
@@ -322,6 +316,29 @@ td > .task-span {
   color: white !important;
 }
 
+.container, .skills, .html {
+  box-sizing: border-box
+}
+
+.container {
+  width: 70%;
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 2%, rgba(255,255,255,1) 2%);
+}
+
+.skills {
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  color: black;
+}
+
+.html {
+  width: 1%; 
+  background-color: cyan;
+}
+
 #open-menu {
   z-index: 0;
 
@@ -329,7 +346,6 @@ td > .task-span {
   color: cyan;
 
   padding-left: 30px;
-  /* margin-top: 50px; */
 }
 
 #hamb-menu {
@@ -337,6 +353,18 @@ td > .task-span {
   top: 0;
 }
 
+#stats > p {
+  display: inline;
+  margin-left: 0;
+  padding-left: 1%;
+  text-align: left;
+}
+
+#stats {
+  text-align: left;
+  width: 70%;
+  margin: auto;
+}
 
 @media screen and (max-width: 700px) {
     h1, h2 {

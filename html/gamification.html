@@ -11,11 +11,11 @@
     <link href="../css/style.css" rel="stylesheet" type="text/css">
 </head>
 
-<body>
+<body onload="get_level_bar()">
     <div id="id-side-nav" class="class-side-nav">
         <a href="javascript:void(0)" class="closebtn" id="close-menu">&times;</a>
         <a href="#">About</a>
-        <a href="#">View Tasks</a>
+        <a href="../html/add_task.html">View Tasks</a>
         <a href="#">View Character</a>
         <a href="#">Sign Out</a>
     </div>
@@ -25,24 +25,18 @@
     </div>
     
     <div id="main">
-        <footer class="container-fluid">
-            <section class="row">
-                <div class="col" id="quote">
-                    <img src="../images/tuhveezt_logo.png" alt="logo" id="logo">
-                    <p>Keep track of the present to prepare for your future.</p>
-                </div>
+        <p>HTML</p>
+        <div class="container">
+            <div id="percent" class="skills html">0%</div>
+        </div>
 
-                <div id="socials" class="col">
-                    <div class="col-lg social padding" id="socials">
-                        <a href="http://www.facebook.com/tuhveezt" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
-                        <a href="https://twitter.com/tuhveezt" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
-                        <a href="https://www.instagram.com/tuhveezt/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
-                        <a href="https://www.youtube.com/tuhveezt/" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
-                    </div>
-                </div>
-            </section>
-        </footer>
-    </div>
+        <div id="stats">
+            <p id="xp">XP:</p>
+            <p id="level">Level:</p>
+        </div>
+
+        <p><br></p>
+    
 
     <div class="sketchfab-embed-wrapper">
         <iframe title="A 3D model" width="640" height="480" src="https://sketchfab.com/models/ad820af1d6494d66abc3bccdd23a6d0a/embed?autostart=1&amp;ui_controls=1&amp;ui_infos=1&amp;ui_inspector=1&amp;ui_stop=1&amp;ui_watermark=1&amp;ui_watermark_link=1" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
@@ -70,6 +64,25 @@
             on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
         </p>
     </div>
+
+    <footer class="container-fluid">
+        <section class="row">
+            <div class="col" id="quote">
+                <img src="../images/tuhveezt_logo.png" alt="logo" id="logo">
+                <p>Keep track of the present to prepare for your future.</p>
+            </div>
+
+            <div id="socials" class="col">
+                <div class="col-lg social padding" id="socials">
+                    <a href="http://www.facebook.com/tuhveezt" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="https://twitter.com/tuhveezt" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+                    <a href="https://www.instagram.com/tuhveezt/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                    <a href="https://www.youtube.com/tuhveezt/" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+                </div>
+            </div>
+        </section>
+    </footer>
+</div>
     
 
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
