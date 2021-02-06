@@ -339,6 +339,10 @@ td > .task-span {
   background-color: cyan;
 }
 
+/* .reward-1 {
+  visibility: hidden;
+} */
+
 #open-menu {
   z-index: 0;
 
