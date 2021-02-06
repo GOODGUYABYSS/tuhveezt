@@ -1,3 +1,4 @@
+
 const APIKEY = "60190dbd6adfba69db8b6c8d";
 var level = 1;
 var xp = 0;
@@ -10,10 +11,12 @@ $("#task-button").on("click", function (e) {
 
     // retrieve form values
     let taskContent= $("#task-content").val();
+    // let time = $("").val();
 
     // get form values when user clicks
     let jsondata = {
         "task": taskContent
+        // "time": 
     };
 
     // creating AJAX settings
@@ -109,6 +112,7 @@ $("#task-result").on("click", ".checkmark", function (e) {
   // get form values when user clicks
   let jsondata = {
       "task": taskContent
+      // "time": 
   };
 
   // creating AJAX settings
@@ -203,7 +207,14 @@ function getTasks(all = true) {
       <td class="item">
 
       <input type="checkbox" value="" id="flexCheckDefault" class="checkmark form-check-input" data-id='${response[i]._id}' data-task='${response[i].task}'>
-      <label class="form-check-label" for="flexCheckDefault"></label><span id="task-span" class="task-span">
+
+      <div class="button-play">
+        <img type="checkbox" id="play-${response[i]._id}" class="play-button" src="../images/play_button.svg">
+        <!-- <img id="pause-${response[i]._id}" class="pause-button" src="../images/pause_button.svg> -->
+      </div>
+
+      <span class="time" id="display-${response[i]._id}">00:00:00</span>
+      <label class="form-check-label" for="flexCheckDefault"></label><span id="${response[i]._id}" class="task-span">
       ${response[i].task}</span></td>
       <td class="underline"><button type="button" id='task-delete' class='delete option button-design btn btn-danger btn-sm table-button' data-id='${response[i]._id}'>Delete</button></td>
       <td class="underline"><button type="button" id='task-update' class='update option button-design btn btn-info btn-sm table-button' data-id='${response[i]._id}'>Edit</button></td>
@@ -239,7 +250,8 @@ function getCompletedtasks(all = true) {
 
       content = `${content}<tr id='${response[i]._id}'>
       <td class="item"><span id="task-span" class="task-span">
-      ${response[i].task}</span></td>
+      ${response[i].task}</span>
+      <span class="time" id="display-${response[i]._id}">${response[i].time}</span></td>
       <td class="underline"><button type="button" id='task-delete2' class='delete2 option button-design btn btn-danger btn-sm table-button' data-id='${response[i]._id}'>Delete</button></td>
       </tr>`;
 
