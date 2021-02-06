@@ -40,12 +40,6 @@ $(document).ready(function () {
         closeNav();
     });
 
-    var xp = $('#percent').text();
-
-    $('.html').css(
-        "width", $('#percent').text()
-    );
-
     function openNav() {
         document.getElementById("id-side-nav").style.width = "250px";
         document.getElementById("main").style.marginLeft = "250px";

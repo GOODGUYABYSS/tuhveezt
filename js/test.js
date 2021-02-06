@@ -1,6 +1,8 @@
 const APIKEY = "60190dbd6adfba69db8b6c8d";
-var level = $('#xp')
+var level = 1;
+var xp = 0;
 
+get_level_bar();
 
 $("#task-button").on("click", function (e) {
     // prevent default action of the button
@@ -288,8 +290,37 @@ function get_level_bar() {
     $('#percent').text( `${response[0].xp}%`)
     $('#xp').text( `XP: ${response[0].xp}/100`)
     $('#level').text( `Level: ${response[0].level}`)
-    window.lelevel = response[0].level;
-    var xp = response[0].xp;
+    window.level = response[0].level;
+    window.xp = response[0].xp;
+
+    $('.html').css(
+      "width", $('#percent').text()
+  );
+
 
   });
+}
+
+function unlockables() {
+  if (level => 2) {
+    $(".reward-1").css(
+      "visibility", "visible"
+    );
+  }
+
+  if (level => 5) {
+    $(".reward-2").css(
+      "visibility", "visible"
+    );
+  }
+
+  else if (level < 2) {
+    $(".reward-1").css(
+      "visibility", "hidden"
+    );
+
+    $(".reward-2").css(
+      "visibility", "hidden"
+    );
+  }
 }
