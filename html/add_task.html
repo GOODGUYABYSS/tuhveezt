@@ -11,20 +11,22 @@
     <link href="../css/style.css" rel="stylesheet" type="text/css">
 </head>
 
-<body onload="getTasks()">
+<body onload="getTasks(); getCompletedtasks()">
     <div id="id-side-nav" class="class-side-nav">
         <a href="javascript:void(0)" class="closebtn" id="close-menu">&times;</a>
         <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
+        <a href="#">View Tasks</a>
+        <a href="../html/gamification.html">View Character</a>
+        <a href="#">Sign Out</a>
     </div>
 
-    <span id="open-menu">&#9776;</span>
+    <div id="hamb-menu">
+        <span id="open-menu">&#9776;</span>
+    </div>
 
     <div id="main">
     <section id="screen-height">
-        <div id="title">
+        <div class="heading">
             <h4>Tasks</h4>
         </div>
 
@@ -41,36 +43,58 @@
         </table>
 
         <!-- For B1B -->
-        <input type="text" id="thingy-1" class="thingy-1">
+        <section class="inputs">
+            <p class="small-text">To edit, enter a task below and click edit on the corresponding task to replace that task</p>
+            <input type="text" class="form-control bg-dark text-white button-design edit" id="thingy-1" class="thingy-1">
+        </section>
 
 
-        <section id="inputs">
+        <section class="inputs">
             <div class="input-group" id="button-group">
                 <input type="text" class="form-control bg-dark text-white button-design task" id="task-content" placeholder="Add Task" aria-label="Recipient's username with two button addons">
                 <button class="btn btn-outline-secondary button-design" id="task-button" type="button">Add Task</button>
+                <button class="btn btn-outline-secondary button-design" id="cancel-button" type="button">Cancel</button>
             </div>
 
-            <button type="button" class="btn btn-outline-dark button-design" id="add-task">+</button>
+            <button type="button" class="btn btn-outline-dark button-design" id="add-task">Add Task</button>
         </section>
     </section>
 
-    <footer class="container-fluid">
-        <section class="row">
-            <div class="col" id="quote">
-                <img src="../images/tuhveezt_logo.png" alt="logo" id="logo">
-                <p>Keep track of the present to prepare for your future.</p>
-            </div>
+    <!-- Below heading is for B1B -->
+    <div class="heading">
+        <h4>Completed Tasks</h4>
+    </div>
 
-            <div id="socials" class="col">
-                <div class="col-lg social padding" id="socials">
-                    <a href="http://www.facebook.com/tuhveezt" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
-                    <a href="https://twitter.com/tuhveezt" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
-                    <a href="https://www.instagram.com/tuhveezt/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
-                    <a href="https://www.youtube.com/tuhveezt/" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+    <!-- Below table is also for B1B -->
+    <table id='completed-tasks'>
+        <colgroup>
+            <col span="1" style="width: 80%;">
+            <col span="1" style="width: 10%;">
+            <col span="1" style="width: 10%;">
+        </colgroup>
+
+        <tbody>
+
+        </tbody>
+    </table>
+
+        <footer class="container-fluid">
+            <section class="row">
+                <div class="col" id="quote">
+                    <img src="../images/tuhveezt_logo.png" alt="logo" id="logo">
+                    <p>Keep track of the present to prepare for your future.</p>
                 </div>
-            </div>
-        </section>
-    </footer>
+
+                <div id="socials" class="col">
+                    <div class="col-lg social padding" id="socials">
+                        <a href="http://www.facebook.com/tuhveezt" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="https://twitter.com/tuhveezt" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+                        <a href="https://www.instagram.com/tuhveezt/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="https://www.youtube.com/tuhveezt/" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+                    </div>
+                </div>
+            </section>
+        </footer>
     </div>
 
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>

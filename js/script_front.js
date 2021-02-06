@@ -21,6 +21,16 @@ $(document).ready(function () {
         );
     });
 
+    $("#cancel-button").click(function() {
+        $('#add-task').css(
+            "visibility", "visible"
+        );
+
+        $("#button-group").css(
+            "visibility", "hidden"
+        );
+    })
+
     $("#open-menu").click(function() {
         console.log("open menu");
         openNav();
@@ -53,13 +63,3 @@ $(document).ready(function () {
 //         "width", "0"
 //     );
 // }
-
-// function openNav() {
-//     document.getElementById("id-side-nav").style.width = "250px";
-//     document.getElementById("main").style.marginLeft = "250px";
-//   }
-  
-//   function closeNav() {
-//     document.getElementById("id-side-nav").style.width = "0";
-//     document.getElementById("main").style.marginLeft = "0";
-//   }     

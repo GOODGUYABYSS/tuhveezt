@@ -175,10 +175,10 @@ span {
 }
 
 .class-side-nav a {
-  padding: 8px 8px 8px 32px;
+  padding: 8px 8px 8px 64px;
   text-decoration: none;
-  font-size: 25px;
-  color: #818181;
+  font-size: 20px;
+  color: cyan;
   display: block;
   transition: 0.3s;
 }
@@ -195,10 +195,15 @@ span {
   margin-left: 50px;
 }
 
+label {
+  display: inline;
+}
+
 #main {
   transition: margin-left .5s;
-  /* padding-right: 200px; */
 }
+
+
 
 @media screen and (max-height: 450px) {
   .class-side-nav {padding-top: 15px;}
@@ -268,9 +273,18 @@ td > .task-span {
   visibility: hidden;
 }
 
-#inputs {
+.inputs {
   position: relative;
   margin-top: 1%;
+}
+
+.edit {
+  width: 60%;
+  margin: auto;
+}
+
+.small-text {
+  font-size: 15px;
 }
 
 #add-task {
@@ -285,19 +299,42 @@ td > .task-span {
 
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 0.7%;
+  padding-bottom: 0.5%;
   
-  font-size: 30px;
+  font-size: 15px;
   line-height: 0px;
 
 }
 
-#title {
+.heading {
   width: 60%;
   margin: auto;
 
-  margin-top: 2.5%;
+  margin-top: 4%;
   margin-bottom: 2%;
+}
+
+.delete2 {
+  color: red !important;  
+}
+
+.delete2:hover {
+  color: white !important;
+}
+
+#open-menu {
+  z-index: 0;
+
+  font-size: 35px;
+  color: cyan;
+
+  padding-left: 30px;
+  /* margin-top: 50px; */
+}
+
+#hamb-menu {
+  position: fixed;
+  top: 0;
 }
 
 
