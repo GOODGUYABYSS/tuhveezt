@@ -339,9 +339,16 @@ td > .task-span {
   background-color: cyan;
 }
 
-/* .reward-1 {
-  visibility: hidden;
-} */
+.play-button {
+  width: 6%;
+  margin-right: 3%;
+  padding-left: 2%;
+  padding-bottom: 0.5%;
+}
+
+.button-play {
+  display: inline;
+}
 
 #open-menu {
   z-index: 0;
