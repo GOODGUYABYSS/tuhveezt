@@ -19,6 +19,7 @@ Beak Wei Xiang did not appear to push because we were sharing coding environment
 Bootstrap <br>
 Jquery
 fontawesome(icons for socials)
+Google API
 
 ## Testing
 
@@ -43,3 +44,4 @@ Logos - https://use.fontawesome.com/releases/v5.0.8/js/all.js
 Side Navigation Bar - https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav
 Checkbox - https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_checkbox
 Gradient Creator - https://cssgradient.io/
+Stopwatch Tutorial - https://tinloof.com/blog/how-to-build-a-stopwatch-with-html-css-js-react-part-2/
