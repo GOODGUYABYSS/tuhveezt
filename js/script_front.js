@@ -1,99 +1,143 @@
-$(document).ready(function () {
-    // Makes a text field appear when "add-task" is clicked
-    $("#add-task").click(function() {
-        console.log("add task");
-        $("#button-group").css(
-            "visibility", "visible"
-        );
+// $(document).ready(function () {
+//     // Makes a text field appear when "add-task" is clicked
+//     $("#add-task").click(function() {
+//         console.log("add task");
+//         $("#button-group").css(
+//             "visibility", "visible"
+//         );
 
-        $("#add-task").css(
-            "visibility", "hidden"
-        );
-    });
+//         $("#add-task").css(
+//             "visibility", "hidden"
+//         );
+//     });
 
-    $("#task-button").click(function() {
-        $("#add-task").css(
-            "visibility", "visible"
-        );
+//     $("#task-button").click(function() {
+//         $("#add-task").css(
+//             "visibility", "visible"
+//         );
 
-        $("#button-group").css(
-            "visibility", "hidden"
-        );
-    });
+//         $("#button-group").css(
+//             "visibility", "hidden"
+//         );
+//     });
 
-    $("#cancel-button").click(function() {
-        $('#add-task').css(
-            "visibility", "visible"
-        );
+//     $("#cancel-button").click(function() {
+//         $('#add-task').css(
+//             "visibility", "visible"
+//         );
 
-        $("#button-group").css(
-            "visibility", "hidden"
-        );
-    })
+//         $("#button-group").css(
+//             "visibility", "hidden"
+//         );
+//     })
 
-    $("#open-menu").click(function() {
-        console.log("open menu");
-        openNav();
-    });
+//     $("#open-menu").click(function() {
+//         console.log("open menu");
+//         openNav();
+//     });
 
-    $("#close-menu").click(function() {
-        closeNav();
-    });
+//     $("#close-menu").click(function() {
+//         closeNav();
+//     });
 
-    $("#task-result").on("click", ".play-button", function(e) {
-        console.log(e.target.id);
-    });
+//     $("#task-result").on("click", ".play-button", function(e) {
+//         let displayVal = e.target.id.replace('play-', 'display-');
+//         console.log(displayVal);
 
-    function timeToString(time) {
-        let diffInHrs = time / 3600000;
-        let hh = Math.floor(diffInHrs);
+//         start(displayVal);
 
-        let diffInMins = (diffInHrs - hh) * 60;
-        let mm = Math.floor(diffInMins);
+//         console.log(e.target.id);
+//         buttonPlayID = $(`#${e.target.id}`);
+//         buttonPauseID = $(`#${e.target.id.replace('play-', 'pause-')}`);
 
-        let diffInSecs = (diffInMins - mm) * 60;
-        let ss = Math.floor(diffInSecs);
+//         buttonPlayID.css(
+//             "display", "none"
+//         );
 
-        let diffInMs = (diffInSec - ss) * 1000;
-        let ms = Math.floor(diffInMs);
+//         buttonPauseID.css(
+//             "display", "inline"
+//         );
+//     });
 
-        let formattedHH = hh.toString().padstart(2, "0");
-        let formattedMM = mm.toString().padStart(2, "0");
-        let formattedSS = ss.toString().padStart(2, "0");
+//     $("#task-result").on("click", ".pause-button", function(e) {
+//         pause();
 
-        return `${formattedHH}:${formattedMM}:${formattedSS}`;
-    }
+//         console.log(e.target.id);
+//         let buttonPauseID = $(`#${e.target.id}`);
+//         let buttonPlayID = $(`#${e.target.id.replace('pause-', 'play-')}`);
 
-    let startTime;
-    let elapsedTime;
-    let timerInterval;
+//         buttonPauseID.css(
+//             "display", "none"
+//         );
 
-    function print(txt) {
-        document.getElementById(displayVal).innerHTML = txt;
-    }
+//         buttonPlayID.css(
+//             "display", "inline"
+//         );
+//     });
 
-    function start() {
-        let displayVal = "gay"
+//     $(document).ajaxStart(function() {
+//         $("#id-side-nav").css("display", "block");
+//     });
 
-        startTime = Date.now();
-        timerInterval = setInterval(function printTime() {
-            elapsedTime = Date.now() - startTime;
-            document.getElementById(displayVal).innerHTML = timeToString(elapsedTime);
-        }
-    ), 1000}
+//     $(document).ajaxComplete(function() {
+//         $("#id-side-nav").css("display", "none");
+//     })
 
-    function pause() {
-        clearInterval(timerInterval);
-    }
+//     function timeToString(time) {
+//         let diffInHrs = time / 3600000;
+//         let hh = Math.floor(diffInHrs);
 
-    function openNav() {
-        document.getElementById("id-side-nav").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-      }
+//         let diffInMins = (diffInHrs - hh) * 60;
+//         let mm = Math.floor(diffInMins);
+
+//         let diffInSecs = (diffInMins - mm) * 60;
+//         let ss = Math.floor(diffInSecs);
+
+//         let diffInMs = (diffInSecs - ss) * 1000;
+//         let ms = Math.floor(diffInMs);
+
+//         let formattedHH = hh.toString().padStart(2, "0");
+//         let formattedMM = mm.toString().padStart(2, "0");
+//         let formattedSS = ss.toString().padStart(2, "0");
+
+//         return `${formattedHH}:${formattedMM}:${formattedSS}`;
+//     }
+
+//     let startTime;
+//     let timerInterval;
+//     var ids = {};
+
+//     let gays = {"display-606606969696969": 100, "display-12345": 200};
+
+//     function print(txt, displayVal) {
+//         console.log(displayVal);
+//         document.getElementById(displayVal).innerHTML = txt;
+//     }
+
+//     function start(displayVal) {
+//         if (ids.hasOwnProperty(displayVal) == false) {
+//             ids[displayVal] = 0;
+//         }
+
+//         startTime = Date.now() - ids[displayVal];
+//         timerInterval = setInterval(function printTime() {
+//             ids[displayVal] = Date.now() - startTime;
+//             print(timeToString(ids[displayVal]), displayVal);
+//         }
+//     ), 1000}
+
+//     function pause() {
+//         clearInterval(timerInterval);
+//     }
+
+//     function openNav() {
+//         document.getElementById("id-side-nav").style.width = "250px";
+//         document.getElementById("main").style.marginLeft = "250px";
+//       }
       
-      /* Set the width of the side navigation to 0 */
-    function closeNav() {
-        document.getElementById("id-side-nav").style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";  
-      } 
-    });
+//       /* Set the width of the side navigation to 0 */
+//     function closeNav() {
+//         document.getElementById("id-side-nav").style.width = "0";
+//         document.getElementById("main").style.marginLeft = "0";  
+//       } 
+//     });
