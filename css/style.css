@@ -346,6 +346,16 @@ td > .task-span {
   padding-bottom: 0.5%;
 }
 
+.pause-button {
+  display: none;
+  
+  width: 6%;
+  margin-right: 3%;
+  padding-left: 2%;
+  padding-bottom: 0.5%;
+
+}
+
 .button-play {
   display: inline;
 }
