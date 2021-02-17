@@ -11,7 +11,7 @@ In this prototype, we have created the most we can with the time given. So far, 
 
 
 ## Design Process
-We decided to go for a sci-fi theme website as it looks cool. and blah blah
+We decided to go for a sci-fi theme website as it looks cool.
 
 This website is for people who wishes to improve their productivity by tracking what are the tasks that they have to do and at the same time, keep track of how much time they have spent on each task.
 
@@ -21,8 +21,17 @@ As a time-tracking app user, I feel that there is a need to keep track of my rem
 
 
 ## Features
-Add Task 
-View Character
+- Add Task 
+- View Character
+- Delete Task
+- Complete Task
+- Time Tracking
+- Edit Task
+- Navbar/Hamburger Menu
+- Footer Links
+- Level Bar
+- Rewards
+
 
 
 ### Existing Features
@@ -78,7 +87,10 @@ Christian Alexander BB's contributions:
 - Implemented the stopwatch feature visuals (such as real-time time tracking) for each individual task
 
 Beak Wei Xiang's contributions:
-- 
+- Main contributor of the website's backend
+- Created the database with the necessary collections and fields needed for the website 
+- Bridged the database to the website 
+- Coded to GET, POST, PUT information to the database with the website
 
 ### Content
 https://use.fontawesome.com/releases/v5.0.8/js/all.js --> for social media icons
