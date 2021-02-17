@@ -82,7 +82,9 @@ $("#task-result").on("click", ".update", function (e) {
   // retrieving form value from input
   var str = $('#thingy-1').val()
   $('#thingy-1').val("");
-  var jsondata = {"task": str};
+  console.log(str);
+  var time = $(this).data("time")
+  var jsondata = {"task": str, "time": time};
   // retrieving id information of task
   var temp = $(this).data("id")
   // creating AJAX settings
@@ -150,6 +152,7 @@ $("#task-result").on("click", ".checkmark", function (e) {
   // retrieve task information
   var newval = $(this).data("task")
   let taskContent= newval
+  var time = $(this).data("time")
   // setting increase in xp and level features for gamification
   window.xp += 20
   if (window.xp === 100) {
@@ -159,8 +162,8 @@ $("#task-result").on("click", ".checkmark", function (e) {
 
   // get form values when user clicks
   let jsondata = {
-      "task": taskContent
-      // "time": 
+      "task": taskContent,
+      "time": time
   };
 
   // creating AJAX settings
@@ -259,17 +262,19 @@ function getTasks(all = true) {
   $.ajax(settings).done(function (response) {
     let content = "";
     ids = {}
+    timerInterval = {}
+    
     // initiating a loop to display all the tasks information from the database, delete and update function to html in the form of a table
     for (var i = 0; i < response.length; i++) {
       var time_seconds = timeToString(response[i].time);
-      console.log("Gay " + (response[i].time));
 
       ids[`display-${response[i]._id}`] = response[i].time;
+      timerInterval[`display-${response[i]._id}`] = 0;
 
       content = `${content}<tr id='${response[i]._id}'>
       <td class="item">
 
-      <input type="checkbox" value="" id="flexCheckDefault" class="checkmark form-check-input" data-id='${response[i]._id}' data-task='${response[i].task}'>
+      <input type="checkbox" value="" id="flexCheckDefault" class="checkmark form-check-input" data-id='${response[i]._id}' data-task='${response[i].task}' data-time='${time_seconds}'>
 
       <div class="button-play">
         <img type="checkbox" id="play-${response[i]._id}" class="play-button" src="../images/play_button.svg">
@@ -280,7 +285,7 @@ function getTasks(all = true) {
       <label class="form-check-label" for="flexCheckDefault"></label><span id="${response[i]._id}" class="task-span">
       ${response[i].task}</span></td>
       <td class="underline"><button type="button" id='task-delete' class='delete option button-design btn btn-danger btn-sm table-button' data-id='${response[i]._id}'>Delete</button></td>
-      <td class="underline"><button type="button" id='task-update' class='update option button-design btn btn-info btn-sm table-button' data-id='${response[i]._id}'>Edit</button></td>
+      <td class="underline"><button type="button" id='task-update' class='update option button-design btn btn-info btn-sm table-button' data-id='${response[i]._id}' data-time='${response[i].time}'>Edit</button></td>
       </tr>`;
     }
 
@@ -376,33 +381,51 @@ function get_level_bar() {
       "width", $('#percent').text()
   );
 
+  unlockables();
 
   });
 }
 
+
 function unlockables() {
-  if (level => 2) {
+  $(".reach-level-2").css(
+    "display", "block"
+  );
+  
+  $(".reach-level-5").css(
+    "display", "block"
+  );
+
+  $(".reward-1").css(
+    "display", "none"
+  );
+
+  $(".reward-2").css(
+    "display", "none"
+  );
+
+
+  if (window.level > 2 || window.level == 2) {
+    $(".reach-level-2").css(
+      "display", "none"
+    );
+
     $(".reward-1").css(
-      "visibility", "visible"
+      "display", "block"
     );
   }
 
-  if (level => 5) {
-    $(".reward-2").css(
-      "visibility", "visible"
-    );
-  }
-
-  else if (level < 2) {
-    $(".reward-1").css(
-      "visibility", "hidden"
+  if (window.level > 5 || window.level == 5) {
+    $(".reach-level-5").css(
+      "display", "none"
     );
 
     $(".reward-2").css(
-      "visibility", "hidden"
+      "display", "block"
     );
   }
 }
+
 
 // Makes a text field appear when "add-task" is clicked
 $("#add-task").click(function() {
@@ -466,7 +489,8 @@ $("#task-result").on("click", ".play-button", function(e) {
 });
 
 $("#task-result").on("click", ".pause-button", function(e) {
-    pause();
+    let displayVal = e.target.id.replace('pause-', 'display-'); 
+    pause(displayVal);
 
     console.log(e.target.id);
     let buttonPauseID = $(`#${e.target.id}`);
@@ -480,14 +504,6 @@ $("#task-result").on("click", ".pause-button", function(e) {
         "display", "inline"
     );
 });
-
-// $(document).ajaxStart(function() {
-//     $("#id-side-nav").css("display", "block");
-// });
-
-// $(document).ajaxComplete(function() {
-//     $("#id-side-nav").css("display", "none");
-// })
 
 function timeToString(time) {
     let diffInHrs = time / 3600000;
@@ -517,8 +533,8 @@ function getTaskIds() {
   }
 }
 
-let startTime;
-let timerInterval;
+let startTime = {};
+// let timerInterval;
 
 function print(txt, displayVal) {
   document.getElementById(displayVal).innerHTML = txt;
@@ -529,20 +545,18 @@ function start(displayVal, displayVal2) {
     //     ids[displayVal] = 0;
     // }
 
-    startTime = Date.now() - ids[displayVal];
-    timerInterval = setInterval(function printTime() {
+    startTime[displayVal] = Date.now() - ids[displayVal];
+    timerInterval[displayVal] = setInterval(function printTime() {
       key = displayVal2;
-      // milli = ids[displayVal]; 
-      ids[displayVal] = Date.now() - startTime;
+      ids[displayVal] = Date.now() - startTime[displayVal];
       milli = ids[displayVal];
-      console.log(milli)
-      // console.log(milli);
+      console.log(milli);
       print(timeToString(milli), displayVal);
     }
 ), 1000}
 
-function pause() {
-    clearInterval(timerInterval);
+function pause(displayVal) {
+    clearInterval(timerInterval[displayVal]);
 }
 
 function openNav() {

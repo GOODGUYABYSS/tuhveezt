@@ -121,11 +121,6 @@ span {
   color: cyan;
 }
 
-.website {
-  color: cyan;
-  text-align: center;
-  margin-top: -3%;
-}
 
 .item {
   color: cyan;
@@ -360,6 +355,35 @@ td > .task-span {
   display: inline;
 }
 
+.question-mark {
+  display: block;
+  width: 20%;
+  border: 2px solid cyan;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.question-mark-container {
+  margin-bottom: 10%;
+  margin-top: 3%;
+}
+
+.three-d-model {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.level-up {
+  margin-top: 10%;
+}
+
+.lottie {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #open-menu {
   z-index: 0;
 
@@ -367,9 +391,13 @@ td > .task-span {
   color: cyan;
 
   padding-left: 30px;
+
+  /* border: 2px solid blue; */
 }
 
 #hamb-menu {
+  width: 50%;
+  /* border: 2px solid red; */
   position: fixed;
   top: 0;
 }
@@ -378,7 +406,7 @@ td > .task-span {
   display: inline;
   margin-left: 0;
   padding-left: 1%;
-  text-align: left;
+  text-align: left !important;
 }
 
 #stats {
@@ -386,6 +414,17 @@ td > .task-span {
   width: 70%;
   margin: auto;
 }
+
+#hamb-menu > p {
+  /* border: 2px solid blue; */
+  display: inline;
+  text-align: left;
+  padding-left: 5%;
+}
+
+/* #robot {
+  border: 2px solid red;
+} */
 
 @media screen and (max-width: 700px) {
     h1, h2 {

@@ -9,6 +9,7 @@ This application solves a personal problem of mine and a lot of people in terms 
 
 In this prototype, we have created the most we can with the time given. So far, we created the fundamental aspects of the application, which are time-tracking, task creation, deletion and modification, leveling and reward system (using our 3D models as the rewards for the user), and saving all these items in a database to be used later when the user goes back to the website. 
 
+
 ## Design Process
 We decided to go for a sci-fi theme website as it looks cool. and blah blah
 
@@ -25,13 +26,35 @@ View Character
 
 
 ### Existing Features
+**Features In The Tasks Page**
+- Feature 1 - Add Task Feature. This feature allows users to add tasks to the to-do list and then retrieve them when they log back on to the website.
 
+- Feature 2 - Delete Task Feature. This feature allows users to delete tasks that they do not want as part of their to-do list anymore. This feature is not to be mistaken with the Complete Task feature, which is similar in that it makes the task disappear in the "tasks" section.
+
+- Feature 3 - Complete Task Feature. This feature allows users to mark a task as complete. Tasks marked as complete will appear in the "Completed Tasks" section, where users can see how much time they spent on the task and they will have an option to delete it.
+
+- Feature 4 - Time Tracking Feature. This feature allows users to track the time spent on each individual task. They have the option to pause the time-tracking if they pause their task. The time tracked for each task is saved in the database so when users log in again, they can continue where they left off in how much time they spent on the task.
+
+- Feature 5 - Edit Task Feature. This feature lets users edit an existing task. To edit a task, they click on the textarea of the "edit task" section, name a task, and then click on the edit button beside the task.
+
+**General Features**
+- Feature 6 - Navbar/Hamburger Menu. Users can use this to navigate the website between the home page, tasks page, and rewards/xp/levels page.
+
+- Feature 7 - Footer Links. These link to the website's fictional social media, which will be used for marketing the website. Currently, the website's social media has not been implemented, but will be implemented in future versions.
+
+**Features In The Rewards Page**
+- Feature 8 - Level Bar. When users complete a task, they gain 20xp (experience points), which will reflect on the level bar. Once users reach 100xp, they will level up by 1 level
+
+- Feature 9 - Rewards. When users reach levels 2 and 5 respectively after completing tasks, they will earn a reward. More rewards will be added in future implementations of the website. Currently, the rewards are two futuristic planes, since this website is science-fiction themed.
 
 ### Features Left to Implement
-Lottie Animation when loading page
-Timetable
-Projects 
+- Lottie Animation when loading page - This feature displays a Lottie animation when the page is loading. The Lottie animation disappears when the page has been fully loaded
 
+- Timetable - This feature displays a timetable showing what tasks were completed during the day. For example, if a task was done between 1 p.m. and 3 p.m., the timetable will display a rectangular block over that period in the timetable showing the task name and duration of the task.
+
+- Projects - This feature allows users to sort their tasks within projects. For example, users can sort all of their ASG3 tasks in a project called "ASG3".
+
+- Skills - This is similar to projects, although skills have their own level bar separate from the main level bar in the Rewards page. This makes the to-do list feel more like a game in that you can have different statistics to level up in. For example, users can link all school related tasks in a skill called "education" and gain "education" experience points everytime they do a task related to education.
 
 
 ## Technologies Used
@@ -40,21 +63,30 @@ RestDB
 Jquery
 fontawesome(icons for socials)
 
+
 ## Testing
 This website is only built for desktop website browsers.
 
-When bridging the website to the RestDB database, I had to think of what types of data I would need. For example, for our gamification idea of the website, we knew that we needed xp and levels, but did not know how we are going to display it and also how we are going to post the data to the database. Hence, when we were doing the gamifcation part, we had to really think through each step from knowing what types of data we need, creating the data and to displaying the results to our website. 
-
-
+When bridging the website to the RestDB database, I had to think of what types of data I would need. For example, for our gamification idea of the website, we knew that we needed xp and levels, but did not know how we are going to display it and also how we are going to post the data to the database. Hence, when we were doing the gamification part, we had to really think through each step from knowing what types of data we need, creating the data and to displaying the results to our website. 
 
 
 ## Credits
+Christian Alexander BB's contributions:
+- Main contributor of the website's frontend
+- Created the design and structure of the pages with HTML, CSS, Bootstrap, and some jQuery
+- Created the hamburger menu and links to different pages
+- Implemented the stopwatch feature visuals (such as real-time time tracking) for each individual task
+
+Beak Wei Xiang's contributions:
+- 
 
 ### Content
 https://use.fontawesome.com/releases/v5.0.8/js/all.js --> for social media icons
 
+
 ### Media
 - Logo made by Beak Wei Xiang in Adobe Illustrator
+
 - Cyberpunk City Background Page : First Background Image on Page 1 (index.html)
   - website link: https://www.kolpaper.com/10469/city-night-landscape-wallpaper/
   - direct link: https://www.kolpaper.com/wp-content/uploads/2020/05/City-Night-Landscape-Wallpaper.jpg
@@ -63,7 +95,7 @@ https://use.fontawesome.com/releases/v5.0.8/js/all.js --> for social media icons
   - website link: https://wallpapersafari.com/w/F5zabg
   - direct link: https://img.wallpapersafari.com/desktop/1440/900/52/33/F5zabg.jpg
 
-- Play Button: 
+- Play Button and Pause Button: https://github.com/tinloof/gold-stopwatch/tree/master/icons
 
 
 ### Acknowledgements
@@ -74,6 +106,7 @@ References for certain programming aspects:
 - Checkbox - https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_checkbox
 - Gradient Creator - https://cssgradient.io/
 - Stopwatch Tutorial - https://tinloof.com/blog/how-to-build-a-stopwatch-with-html-css-js-react-part-2/
+
 
 ## Website Link
 https://weixiangbeak.github.io/tuhveezt/
